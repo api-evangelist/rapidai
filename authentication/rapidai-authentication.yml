@@ -1,0 +1,70 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.rapidai.com/platform/workflow-integration
+docs:
+- https://www.rapidai.com/platform/workflow-integration
+- https://www.rapidai.com/it
+note: No OpenAPI exists for RapidAI, so nothing here was derived from securitySchemes.
+  This profile is assembled from RapidAI's own published statements plus anonymous
+  probes of the production API host. Exact token format, header name and grant type
+  are NOT public — they are disclosed to Rapid Technology Partner Program members.
+summary:
+  types:
+  - unknown-api-token
+  - saml-sso
+  api_key_in: []
+  oauth2_flows: []
+  public_self_service: false
+  developer_portal: false
+schemes:
+- name: rapid-partner-api
+  type: unknown
+  applies_to: https://api.us.rapid-sys.com
+  description: The Rapid Technology Partner API is gated. Anonymous requests to the
+    versioned surface return HTTP 403 with an AWS API Gateway body {"message":"Missing
+    Authentication Token"}, and unversioned paths return {"message":"Forbidden"}. The
+    credential type is not published.
+  evidence:
+    fetched: '2026-08-02'
+    probes:
+    - url: https://api.us.rapid-sys.com/v4
+      http_status: 403
+      body: '{"message":"Missing Authentication Token"}'
+    - url: https://api.us.rapid-sys.com/
+      http_status: 403
+      body: '{"message":"Forbidden"}'
+    - url: https://api.us.rapid-sys.com/v4/auth/discovery
+      http_status: 500
+      note: An auth-discovery endpoint exists on the platform (referenced by RapidAI's
+        own Rapid Web App bundle) but is not anonymously usable.
+- name: enterprise-sso
+  type: saml-sso
+  applies_to: https://app.rapidai.com/
+  description: The Rapid Web App supports enterprise single sign-on through third-party
+    identity providers.
+  evidence:
+    quote: 'Rapid Web App is "integrated with third-party identity providers such as
+      Microsoft Active Directory to support single sign-on."'
+    source: https://www.rapidai.com/press-release/rapidai-launches-rapid-web-app-and-receives-iso-27001-certification
+- name: device-authorization
+  type: unknown
+  applies_to: https://api.us.rapid-sys.com
+  description: The Rapid mobile/web client calls a /v4/auth/device-allowed endpoint,
+    indicating device-level authorization on top of user authentication. Not anonymously
+    documented.
+  evidence:
+    source: https://app.rapidai.com/main.0aa463f11046e124.js
+discovery_probes:
+- url: https://www.rapidai.com/.well-known/openid-configuration
+  http_status: 404
+- url: https://www.rapidai.com/.well-known/oauth-authorization-server
+  http_status: 404
+- url: https://api.us.rapid-sys.com/.well-known/openid-configuration
+  http_status: 403
+- url: https://api.us.rapid-sys.com/.well-known/oauth-protected-resource
+  http_status: 403
+gaps:
+- No public authentication documentation page.
+- No OAuth 2.0 / OIDC discovery document served anonymously on any host.
+- No self-service credential issuance; access runs through the Rapid Technology Partner
+  Program (https://www.rapidai.com/partners).

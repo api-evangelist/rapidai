@@ -1,0 +1,98 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.rapidai.com/platform/workflow-integration
+docs:
+- https://www.rapidai.com/platform/workflow-integration
+- https://www.rapidai.com/it
+- https://www.rapidai.com/platform/enterprise-infrastructure
+note: RapidAI publishes no OpenAPI, so nothing here is derived from a machine-readable
+  contract. Every entry below is grounded in a quoted claim on RapidAI's own public
+  pages, or in an observed probe result.
+standards:
+- id: hl7-v2
+  conforms: true
+  evidence: 'Workflow integration page: "Standard (HL7, FHIR, DICOM) and custom APIs"'
+  source: https://www.rapidai.com/platform/workflow-integration
+- id: hl7-fhir
+  conforms: true
+  evidence: 'Workflow integration page: "Standard (HL7, FHIR, DICOM) and custom APIs"'
+  source: https://www.rapidai.com/platform/workflow-integration
+  note: FHIR release/version and profile set are not published; no CapabilityStatement
+    found on any public host.
+- id: dicom
+  conforms: true
+  evidence: 'Workflow integration page names "DICOM-based worklist prioritization"
+    and integration with PACS, RIS, EHR and radiology worklist providers.'
+  source: https://www.rapidai.com/platform/workflow-integration
+- id: dicomweb
+  conforms: true
+  evidence: RapidAI's GitHub organization (ischemaview) publishes Static-DICOMWeb ("RapidAI
+    Static Dicom Web") and forks of cornerstone3D / cornerstone-wado-image-loader used
+    by the Rapid DICOM viewer.
+  source: https://github.com/ischemaview/Static-DICOMWeb
+- id: iso-13485
+  conforms: true
+  evidence: '"ISO 13485 ... certified" — medical device quality management system.'
+  source: https://www.rapidai.com/it
+- id: iso-27001
+  conforms: true
+  evidence: '"ISO 27001 ... certified"; separately announced by press release in September
+    2020.'
+  source: https://www.rapidai.com/it
+- id: iso-27701
+  conforms: true
+  evidence: '"ISO 27701 ... certified" — privacy information management.'
+  source: https://www.rapidai.com/it
+- id: iso-42001
+  conforms: true
+  evidence: '"ISO 42001 ... certified" — AI management system.'
+  source: https://www.rapidai.com/it
+- id: soc2-type2
+  conforms: true
+  evidence: '"SOC2 Type 2 ... certified"'
+  source: https://www.rapidai.com/it
+- id: csa-star
+  conforms: true
+  evidence: '"CSA Star certified"'
+  source: https://www.rapidai.com/it
+- id: hipaa
+  conforms: true
+  evidence: '"HIPAA compliant"'
+  source: https://www.rapidai.com/it
+- id: gdpr
+  conforms: true
+  evidence: '"GDPR compliant"; RapidAI/iSchemaView participates in the EU-US Data Privacy
+    Framework and publishes a DPO contact.'
+  source: https://www.rapidai.com/privacy-policy
+- id: nist-csf
+  conforms: true
+  evidence: '"The Rapid platform has been developed using the National Institute of
+    Standards and Technology (NIST) cybersecurity framework."'
+  source: https://www.rapidai.com/it
+- id: fda-510k
+  conforms: true
+  evidence: Multiple FDA 510(k) clearances announced by press release (Rapid ASPECTS
+    CADx, Rapid LVO, Rapid Aortic, Lumina 3D, subdural hematoma detection, angio-suite
+    perfusion).
+  source: https://www.rapidai.com/news-and-press
+- id: saml-sso
+  conforms: true
+  evidence: Rapid Web App is "integrated with third-party identity providers such as
+    Microsoft Active Directory to support single sign-on."
+  source: https://www.rapidai.com/press-release/rapidai-launches-rapid-web-app-and-receives-iso-27001-certification
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI/Swagger document found on www.rapidai.com, app.rapidai.com, or
+    api.us.rapid-sys.com (see well-known/rapidai-well-known.yml for the probe log).
+- id: oauth2
+  conforms: unknown
+  evidence: /.well-known/oauth-authorization-server and /.well-known/oauth-protected-resource
+    return 404 (www) / 403 (API host). The API host exposes /v4/auth/discovery, but
+    it is not anonymously readable.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public error contract. The AWS API Gateway edge returns {"message":"..."}
+    JSON, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on www.rapidai.com.

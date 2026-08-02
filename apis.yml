@@ -1,18 +1,70 @@
 aid: rapidai
 name: RapidAI
-description: 'RapidAI is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'RapidAI (legal entity iSchemaView, Inc., San Mateo, California) builds
+  a deep clinical AI platform for medical imaging, best known for the Rapid product
+  family used in stroke and vascular care. Founded in 2012 by Stanford researchers
+  Roland Bammer and Gregory Albers, its FDA-cleared modules — Rapid ASPECTS, Rapid
+  CTA, Rapid CTP, Rapid LVO, Rapid ICH, Rapid MRI, Rapid PE, Rapid Aortic, Rapid Aneurysm
+  and Lumina 3D — analyze non-contrast CT, CT angiography, CT perfusion and MRI studies
+  to triage ischemic stroke, hemorrhagic stroke, aneurysm, pulmonary embolism and
+  aortic disease. The Rapid Enterprise Platform runs on-premise, in the cloud, or on
+  Rapid Edge Cloud, and integrates with hospital PACS, RIS, EHR and radiology worklist
+  systems through standard HL7, FHIR and DICOM interfaces plus custom APIs. RapidAI
+  runs a Rapid Technology Partner Program with an API that lets technology partners
+  integrate Rapid results into their own products; that API is commercial and gated
+  — there is no public developer portal, OpenAPI definition, or self-service sign-up.'
 url: https://raw.githubusercontent.com/api-evangelist/rapidai/refs/heads/main/apis.yml
+image: https://www.rapidai.com/hubfs/RapidAILogo_New.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
-- Company
-apis: []
+- Healthcare
+- Medical Imaging
+- Artificial Intelligence
+- Radiology
+- Clinical Decision Support
+- Stroke
+- DICOM
+- HL7
+- FHIR
+- Diagnostics
+apis:
+- aid: rapidai:rapid-platform-api
+  name: Rapid Technology Partner API
+  description: 'The commercial API behind the Rapid Technology Partner Program, which
+    lets technology partners integrate Rapid imaging results into their own products
+    and services. Access is granted through the partner program — RapidAI publishes
+    no public developer portal, no OpenAPI/Swagger definition, and no self-service
+    sign-up. The production API host observed in RapidAI''s own Rapid Web App bundle
+    is a versioned (v4) AWS API Gateway surface that returns 403 "Missing Authentication
+    Token" to anonymous callers. Hospital-side integration is documented as standard
+    HL7, FHIR and DICOM interfaces plus custom APIs against PACS, RIS, EHR and radiology
+    worklist systems.'
+  humanURL: https://www.rapidai.com/platform/workflow-integration
+  baseURL: https://api.us.rapid-sys.com
+  tags:
+  - Medical Imaging
+  - Healthcare
+  - DICOM
+  - Partner API
+  properties:
+  - type: Authentication
+    url: authentication/rapidai-authentication.yml
+  - type: Lifecycle
+    url: lifecycle/rapidai-lifecycle.yml
+  x-evidence:
+    fetched: '2026-08-02'
+    base_url_source: https://app.rapidai.com/main.0aa463f11046e124.js
+    base_url_probe:
+      url: https://api.us.rapid-sys.com/v4
+      http_status: 403
+      body: '{"message":"Missing Authentication Token"}'
+    partner_program: https://www.rapidai.com/partners
+    integration_docs: https://www.rapidai.com/platform/workflow-integration
+    openapi: none found — see well-known/rapidai-well-known.yml for the probe log
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +72,53 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.rapidai.com/
+- type: Support
+  url: https://www.rapidai.com/customer-support
+- type: HelpCenter
+  url: https://www.rapidai.com/faq
+- type: Blog
+  url: https://www.rapidai.com/blog
+- type: BlogRSS
+  url: https://www.rapidai.com/blog/rss.xml
+- type: GitHubOrganization
+  url: https://github.com/ischemaview
+- type: Login
+  url: https://app.rapidai.com/
+- type: PrivacyPolicy
+  url: https://www.rapidai.com/privacy-policy
+- type: ContactUs
+  url: https://www.rapidai.com/contact-us
+- type: Press
+  url: https://www.rapidai.com/news-and-press
+- type: Careers
+  url: https://www.rapidai.com/careers
+- type: About
+  url: https://www.rapidai.com/about-us
+- type: Education
+  url: https://u.rapid.ai/
+- type: Partners
+  url: https://www.rapidai.com/partners
+- type: LinkedIn
+  url: https://www.linkedin.com/company/rapid-ai/
+- type: SecondaryMarket
   url: https://forgeglobal.com/rapidai_stock/
+- type: Authentication
+  url: authentication/rapidai-authentication.yml
+- type: Lifecycle
+  url: lifecycle/rapidai-lifecycle.yml
+- type: Conformance
+  url: conformance/rapidai-conformance.yml
+- type: Compliance
+  url: https://www.rapidai.com/it
+- type: TrustCenter
+  url: security/rapidai-trust-center.yml
+- type: DomainSecurity
+  url: security/rapidai-domain-security.yml
+- type: LLMsTxt
+  url: llms/rapidai-llms.txt
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

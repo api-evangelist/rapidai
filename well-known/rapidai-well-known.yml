@@ -1,0 +1,124 @@
+generated: '2026-08-02'
+method: probed
+source: live GET probes, 2026-08-02
+note: 'Nothing was found. Every /.well-known/* path missed on every RapidAI host. Recorded
+  as a negative result so future rounds do not re-litigate it. IMPORTANT: app.rapidai.com
+  is an Angular single-page app served from S3/CloudFront whose catch-all returns HTTP
+  200 with an HTML shell for EVERY path — all of its 200s below are rejected as false
+  positives, not discoveries.'
+hosts:
+- host: https://www.rapidai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /robots.txt
+    status: 200
+    note: Present; HubSpot CMS defaults. Declares https://www.rapidai.com/sitemap.xml.
+      No API or agent directives.
+- host: https://api.us.rapid-sys.com
+  note: Production API host (AWS API Gateway) observed in RapidAI's own Rapid Web App
+    bundle. Every path is auth-gated.
+  documents:
+  - path: /
+    status: 403
+    body: '{"message":"Forbidden"}'
+  - path: /v4
+    status: 403
+    body: '{"message":"Missing Authentication Token"}'
+  - path: /openapi.json
+    status: 403
+  - path: /openapi.yaml
+    status: 403
+  - path: /swagger.json
+    status: 403
+  - path: /v4/openapi.json
+    status: 403
+  - path: /api-docs
+    status: 403
+  - path: /docs
+    status: 403
+  - path: /redoc
+    status: 403
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: https://app.rapidai.com
+  note: Angular SPA on S3/CloudFront. Catch-all answers 200 text/html for every path;
+    ALL results below are rejected as false positives.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    accepted: false
+    reason: SPA catch-all HTML, not an AgentCard
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    accepted: false
+    reason: SPA catch-all HTML, not an AgentCard
+  - path: /openapi.json
+    status: 200
+    content_type: text/html
+    accepted: false
+    reason: SPA catch-all HTML, not an OpenAPI document
+  - path: /swagger.json
+    status: 200
+    content_type: text/html
+    accepted: false
+    reason: SPA catch-all HTML
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    accepted: false
+    reason: SPA catch-all HTML
+subdomain_probes:
+- host: api.rapidai.com
+  result: NXDOMAIN
+- host: docs.rapidai.com
+  result: NXDOMAIN
+- host: developer.rapidai.com
+  result: NXDOMAIN
+- host: developers.rapidai.com
+  result: NXDOMAIN
+- host: portal.rapidai.com
+  result: NXDOMAIN
+- host: support.rapidai.com
+  result: NXDOMAIN
+- host: status.rapidai.com
+  result: NXDOMAIN
+- host: trust.rapidai.com
+  result: NXDOMAIN
+documents_found: 0
