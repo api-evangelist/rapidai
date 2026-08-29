@@ -14,6 +14,17 @@ description: 'RapidAI (legal entity iSchemaView, Inc., San Mateo, California) bu
   integrate Rapid results into their own products; that API is commercial and gated
   — there is no public developer portal, OpenAPI definition, or self-service sign-up.'
 url: https://raw.githubusercontent.com/api-evangelist/rapidai/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.rapidai.com/hubfs/RapidAILogo_New.png
 x-type: company
 x-source: harvest:secondary-market
