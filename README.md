@@ -64,5 +64,90 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-RapidAI is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/rapidai_stock/
+RapidAI (legal entity iSchemaView, Inc., San Mateo, California) builds a deep clinical AI platform for medical imaging, best known for the Rapid product family used in stroke and vascular care. Founded in 2012 by Stanford researchers Roland Bammer and Gregory Albers, its FDA-cleared modules — Rapid ASPECTS, Rapid CTA, Rapid CTP, Rapid LVO, Rapid ICH, Rapid MRI, Rapid PE, Rapid Aortic, Rapid Aneurysm and Lumina 3D — analyze non-contrast CT, CT angiography, CT perfusion and MRI studies to triage ischemic stroke, hemorrhagic stroke, aneurysm, pulmonary embolism and aortic disease. The Rapid Enterprise Platform runs on-premise, in the cloud, or on Rapid Edge Cloud, and integrates with hospital PACS, RIS, EHR and radiology worklist systems through standard HL7, FHIR and DICOM interfaces plus custom APIs. RapidAI runs a Rapid Technology Partner Program with an API that lets technology partners integrate Rapid results into their own products; that API is commercial and gated — there is no public developer portal, OpenAPI definition, or self-service sign-up.
+
+**Areas:** Healthcare · Medical Imaging · Artificial Intelligence · Radiology · Clinical Decision Support · Stroke · DICOM · HL7 · FHIR · Diagnostics
+
+## RapidAI on APIs.io
+
+Everything profiled for RapidAI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/rapidai/](https://apis.io/providers/rapidai/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Rapid Technology Partner API](https://apis.io/apis/rapidai/rapid-platform-api/) — The commercial API behind the Rapid Technology Partner Program, which lets technology partners integrate Rapid imaging results into their own products and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Rapidai Authentication](https://apis.io/security/rapidai/rapidai-authentication/)
+- [Rapidai Domain Security](https://apis.io/security/rapidai/rapidai-domain-security/)
+- [Rapidai Trust Center](https://apis.io/security/rapidai/rapidai-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.rapidai.com/)
+- [Support](https://www.rapidai.com/customer-support)
+- [Blog](https://www.rapidai.com/blog)
+- [Compliance](https://www.rapidai.com/it)
+- [Privacy policy](https://www.rapidai.com/privacy-policy)
+- [GitHub](https://github.com/ischemaview)
+
+## API Evangelist rating
+
+**Kin Score 22.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 74.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 32.9 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.0** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/rapidai/](https://apis.io/providers/rapidai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for RapidAI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/rapidai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
